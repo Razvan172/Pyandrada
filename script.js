@@ -1,7 +1,4 @@
-document.getElementById('copyButton').addEventListener('click', function() {
-    // Text you want to copy to clipboard
-    const textToCopy = "
-from sense_hat import SenseHat
+let text = document.getElementById('from sense_hat import SenseHat
 import time
 import random
 
@@ -204,24 +201,12 @@ while True:
         # snake speed (game loop delay):
         time.sleep(snakeMovementDelay)
         
-        ";
-
-
-    // Create a textarea element to hold the text temporarily
-    const textarea = document.createElement('textarea');
-    textarea.value = textToCopy;
-    document.body.appendChild(textarea);
-
-    // Select the text in the textarea
-    textarea.select();
-    textarea.setSelectionRange(0, 99999); /* For mobile devices */
-
-    // Copy the selected text
-    document.execCommand('copy');
-
-    // Remove the textarea from the DOM
-    document.body.removeChild(textarea);
-
-    // Update button text to show it's copied (optional)
-    this.textContent = 'Copied!';
-});
+        ";').innerHTML;
+  const copyContent = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      console.log('Content copied to clipboard');
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+    }
+  }
