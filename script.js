@@ -126,6 +126,9 @@ while True:
     movementX = 0
     movementY = -1
 
+    # -----------------------------------
+    #             game loop
+    # -----------------------------------
     while not gameOverFlag:
         # check if snake eats food:
         if foodPosX == snakePosX[0] and foodPosY == snakePosY[0]:
@@ -201,8 +204,8 @@ while True:
         # snake speed (game loop delay):
         time.sleep(snakeMovementDelay)
         
-        
-";
+        ";
+
 
     // Create a textarea element to hold the text temporarily
     const textarea = document.createElement('textarea');
